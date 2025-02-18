@@ -1,0 +1,1 @@
+export  GNUTLS_CPUID_OVERRIDE=0x1
