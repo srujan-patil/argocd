@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srujan Panthula - DevOps & Cloud Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #121212;
+            color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #ffcc00;
+        }
+        .highlight {
+            font-weight: bold;
+            background: #FFD700;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .bat-symbol {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 10px #FFD700);
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+        .contact-info a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            transform: scale(0.95);
+            transition: transform 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            transform: scale(1);
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            background: #FFD700;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #FFD700;
+            transition: transform 0.2s ease-in-out;
+        }
+        .nav-buttons button:hover {
+            transform: scale(1.1);
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <h1>Hello, this is <span class="highlight">Srujan Panthula</span></h1>
+    <p>A passionate <span class="highlight">DevOps & Cloud Platform Engineer</span>, skilled in cloud automation, Kubernetes, Docker, Jenkins, and CI/CD pipelines.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/87/Batman_DC_Comics.png" alt="Batman Symbol" class="bat-symbol">
+    
+    <div class="contact-info">
+        <p>📞 +91 6281603690 | 📍 Hyderabad, TS</p>
+        <p>✉️ <a href="mailto:srujanpanthula90@gmail.com">srujanpanthula90@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/srujan-panthula-b8878016b/" target="_blank">LinkedIn</a> | 
+        <a href="https://www.github.com/srujan-patil" target="_blank">GitHub</a></p>
+    </div>
+    
+    <div class="slideshow-container">
+        <div class="slide active" id="education">
+            <h2>Education</h2>
+            <p>Bachelor of Technology - Information Technology (CGPA: 7.54)</p>
+            <p>Guru Ghasidas Central University, Bilaspur (2023)</p>
+        </div>
+        <div class="slide" id="skills">
+            <h2>Technical Skills</h2>
+            <p>Python, SQL, HTML, CSS, Bash Scripting</p>
+            <p>GitHub, Linux, Jenkins, Docker, Kubernetes, AWS (EC2, S3, IAM, ELB, VPC)</p>
+            <p>System Performance Optimization, IT Infrastructure Operations</p>
+        </div>
+        <div class="slide" id="experience">
+            <h2>Experience</h2>
+            <p><strong>E2E Networks - Cloud Platform Engineer (May 2024 - Present)</strong></p>
+            <p>Managing cloud infrastructure, load balancing, networking, and customer support.</p>
+            <p><strong>Bharath Cloud Pvt Ltd - Cloud Success (Dec 2023 - Apr 2024)</strong></p>
+            <p>Designed and optimized cloud solutions, ensuring security and cost efficiency.</p>
+        </div>
+        <div class="slide" id="projects">
+            <h2>Projects</h2>
+            <p><strong>CI/CD Pipeline for Web Application</strong></p>
+            <p>Automated deployment using AWS EC2, Jenkins, and GitHub integration.</p>
+            <p><strong>Credit Card Fraud Detection</strong></p>
+            <p>Implemented machine learning algorithms for fraud detection with Random Forest, XGBoost.</p>
+        </div>
+    </div>
+    
+    <div class="nav-buttons">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) slide.classList.add("active");
+            });
+        }
+        
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+        
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+        
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>
+
